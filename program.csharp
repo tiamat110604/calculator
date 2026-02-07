@@ -1,0 +1,52 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        RunCalculator();
+    }
+
+    static void RunCalculator()
+    {
+        int num1;
+        int num2;
+        char op;
+        bool running = true;
+
+        while (running)
+        {
+            Console.Write("Enter first number: ");
+            num1 = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter second number: ");
+            num2 = int.Parse(Console.ReadLine());
+
+            while (true)
+            {
+                Console.Write("Choose operation (+,-,*,/,%,=): ");
+                op = Console.ReadLine()[0];
+
+                if (op == '+' || op == '-' || op == '*' || op == '/' || op == '%' || op == '=')
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect Operation Used, please try again");
+                }
+            }
+
+            if (op == '=')
+            {
+                Console.WriteLine("Program terminated.");
+                running = false;
+            }
+            else
+            {
+                Calculator(num1, num2, op);
+            }
+
+            Console.WriteLine();
+        }
+    }

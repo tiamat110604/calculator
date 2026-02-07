@@ -1,0 +1,41 @@
+    static void Calculator(int a, int b, char op)
+    {
+        switch (op)
+        {
+            case '+':
+                Console.WriteLine("Result: " + (a + b));
+                break;
+
+            case '-':
+                Console.WriteLine("Result: " + (a - b));
+                break;
+
+            case '*':
+                Console.WriteLine("Result: " + (a * b));
+                break;
+
+            case '/':
+                if (b == 0)
+                {
+                    Console.WriteLine("Cannot divide by zero");
+                }
+                else
+                {
+                    double result = (double)a / b;
+                    Console.WriteLine("Result: " + result);
+                }
+                break;
+
+            case '%':
+                if (b == 0)
+                {
+                    Console.WriteLine("Cannot modulo by zero");
+                }
+                else
+                {
+                    Console.WriteLine("Result: " + (a % b));
+                }
+                break;
+        }
+    }
+}
